@@ -1,6 +1,8 @@
-{ pkgs, lib, ...}: {
+{ pkgs, lib, ...}: 
+{
   imports = [
-    ./environment.nix
-    ./hyprland.nix
+    ./modules/environment.nix
+    ./modules/hyprland.nix
+    ./modules/foot.nix
   ];
 }

@@ -21,7 +21,9 @@
     vesktop
     fcitx5
     fcitx5-mozc
+    cascadia-code
   ];
 
+  fonts.fontconfig.enable = true;
   programs.home-manager.enable = true;
 }
