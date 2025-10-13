@@ -77,7 +77,7 @@ in
         "$mod, Q, exec, ${session.TERMINAL}"
 	"$mod, R, exec, ${session.LAUNCHER}"
 	"$mod, E, exec, ${session.FILEMANAGER}"
-	"$mod, S, exec, ${session.SCREENSHOT}"
+	"$mod, S, exec, bash -c \"${session.SCREENSHOT}\""
 	"$mod, M, exec, ${session.OCR}"
 	", XF86PowerOff, exec, ${session.LOCK}"
 	# main shortcuts
