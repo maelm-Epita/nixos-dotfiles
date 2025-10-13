@@ -15,6 +15,7 @@
     git
     foot
     firefox
+    rofi
     fastfetch
     btop
     anki
