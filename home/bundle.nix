@@ -6,5 +6,6 @@
     ./modules/foot.nix
     ./modules/rofi.nix
     ./modules/waybar.nix
+    ./modules/swaylock.nix
   ];
 }

@@ -79,7 +79,7 @@
 		   wayland.enable = true;
 	   };
    };
-   services.logind.powerKey = "ignore";
+   services.logind.settings.Login.HandlePowerKey = "ignore";
 
    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
