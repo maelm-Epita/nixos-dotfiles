@@ -1,6 +1,7 @@
 {pkgs, lib, ...}: {
 	programs.swaylock = {
 		enable = true;
+		package = pkgs.swaylock-effects;
 		settings = {
 			ignore-empty-password = true;
 			show-failed-attempts = true;
@@ -9,15 +10,15 @@
 			font="Cascadia Code";
 			font-size=35;
 
-			clock;
+			clock = true;
 			timestr="%R";
 			datestr="%a %e, %B";
 
-			screenshots;
+			screenshots = true;
 			effect-blur="5x10";
 			effect-scale=1;
 
-			indicator;
+			indicator = true;
 			indicator-radius=160;
 			indicator-thickness=22;
 

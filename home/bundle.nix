@@ -7,5 +7,6 @@
     ./modules/rofi.nix
     ./modules/waybar.nix
     ./modules/swaylock.nix
+    ./modules/zsh.nix
   ];
 }

@@ -1,5 +1,6 @@
 {pkgs, lib, ...}: {
   home.sessionVariables = {
+    FLAKEDIR = "$(pwd)";
     TERMINAL = "foot";
     LAUNCHER = "rofi -show drun -location 2 --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto";
     FILEMANAGER = "thunar";
