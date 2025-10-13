@@ -8,9 +8,9 @@
       };
       cursor = {
         blink="yes";
-	color="191724 e0def4";
       };
       colors = {
+	cursor="191724 e0def4";
         background="191724";
 	foreground="e0def4";
 	regular0="26233a";

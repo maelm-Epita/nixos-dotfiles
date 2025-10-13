@@ -80,7 +80,6 @@ in
 	"$mod, S, exec, ${session.SCREENSHOT}"
 	"$mod, M, exec, ${session.OCR}"
 	", XF86PowerOff, exec, ${session.LOCK}"
-	"$mod, O, exec, ${session.LOCK}"
 	# main shortcuts
 	"$mod, C, killactive"
 	"$mod, V, togglefloating"
