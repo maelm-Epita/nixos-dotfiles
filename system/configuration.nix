@@ -71,18 +71,15 @@
   ];
 
   # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
-   services.xserver = {
-     enable = true;
-     displayManager = {
-     	sddm = {
-	  enable = true;
-	  wayland.enable = true;
-	};
-     };
+   services.displayManager = {
+	   sddm = {
+		   enable = true;
+		   wayland.enable = true;
+	   };
    };
+   services.logind.powerKey = "ignore";
 
    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

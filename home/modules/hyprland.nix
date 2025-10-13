@@ -6,6 +6,9 @@ in
     wayland.windowManager.hyprland = { 
     enable = true;
     settings = {
+      exec-once=[
+        "waybar"
+      ];
       monitor = [
         "eDP-1,1920x1080@120,0x0,1"
 	"HDMI-A-1,1920x1080@120,0x0,1"
@@ -76,7 +79,8 @@ in
 	"$mod, E, exec, ${session.FILEMANAGER}"
 	"$mod, S, exec, ${session.SCREENSHOT}"
 	"$mod, M, exec, ${session.OCR}"
-	"$mod, L, exec, ${session.LOCK}"
+	", XF86PowerOff, exec, ${session.LOCK}"
+	"$mod, O, exec, ${session.LOCK}"
 	# main shortcuts
 	"$mod, C, killactive"
 	"$mod, V, togglefloating"

@@ -19,7 +19,7 @@
     xfce.thunar
     rofi
     fastfetch
-    swaylock
+    swaylock-effects
     btop
     anki
     grim
