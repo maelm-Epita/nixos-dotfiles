@@ -5,5 +5,6 @@
     ./modules/hyprland.nix
     ./modules/foot.nix
     ./modules/rofi.nix
+    ./modules/waybar.nix
   ];
 }

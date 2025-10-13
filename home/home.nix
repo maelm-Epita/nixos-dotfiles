@@ -15,10 +15,16 @@
     git
     foot
     firefox
+    waybar
+    xfce.thunar
     rofi
     fastfetch
+    swaylock
     btop
     anki
+    grim
+    slurp
+    wl-clipboard
     vesktop
     fcitx5
     fcitx5-mozc

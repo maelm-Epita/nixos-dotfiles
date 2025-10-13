@@ -8,5 +8,5 @@
     extraConfig = {
       show-icons = true;
     };
-  }
+  };
 }
