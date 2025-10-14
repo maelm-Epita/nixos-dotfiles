@@ -15,6 +15,13 @@
     enable = true;
   };
   */
+  programs.nixvim.keymaps = [
+    {
+        mode = "n";
+        key = "<leader>pm";
+        action = "<cmd>MarkdownPreview<CR>";
+    }
+  ];
 
   programs.nixvim.plugins.markview = {
     enable = true;

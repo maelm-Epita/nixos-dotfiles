@@ -7,6 +7,7 @@
     ./globals.nix
     ./options.nix
     ./plugins
+    ./lsp.nix
     ./keymaps.nix
   ];
 

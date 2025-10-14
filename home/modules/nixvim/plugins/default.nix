@@ -6,7 +6,7 @@
       ./lualine.nix
       ./flash.nix
       ./dashboard.nix
-      ./lsp.nix
+      ./lspconfig.nix
       ./markdown.nix
     ];
 }
