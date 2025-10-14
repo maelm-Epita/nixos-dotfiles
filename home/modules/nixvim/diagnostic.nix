@@ -1,5 +1,5 @@
 {
-    programs.nixvim.diagnostics = {
+    programs.nixvim.diagnostic.settings = {
         virtual_text = true;
         signs = true;
         underline = true;
