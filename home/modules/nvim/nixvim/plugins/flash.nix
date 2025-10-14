@@ -1,5 +1,5 @@
 {
   plugins = {
     flash.enable = true;
-  }
+  };
 }

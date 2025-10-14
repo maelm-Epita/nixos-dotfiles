@@ -1,5 +1,6 @@
 {
   imports = [
+    ./web-devicons.nix
     ./treesitter.nix
     ./telescope.nix
     ./lualine.nix
