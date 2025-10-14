@@ -1,4 +1,6 @@
 {
-  keymaps = [
+  programs.nixvim.keymaps = [
+    {
+    };
   ];
 }

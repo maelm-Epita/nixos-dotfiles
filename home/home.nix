@@ -11,7 +11,9 @@
   ];
 
   home.packages = with pkgs; [
-    neovim
+    # neovim -- is installed through nixvim ; installing it from pkgs breaks the configuration
+    blueman
+    pavucontrol
     git
     foot
     firefox

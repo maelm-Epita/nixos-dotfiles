@@ -1,4 +1,4 @@
 {
-  colorschemes.rose-pine.enable = true;
-  colorscheme = "rose-pine";
+  programs.nixvim.colorschemes.rose-pine.enable = true;
+  programs.nixvim.colorscheme = "rose-pine";
 }

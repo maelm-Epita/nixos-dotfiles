@@ -1,8 +1,8 @@
 {
-  plugins.web-devicons = {
+  programs.nixvim.plugins.web-devicons = {
     enable = true;
   };
-  plugins.telescope = {
+  programs.nixvim.plugins.telescope = {
     enable = true;
   };
 }

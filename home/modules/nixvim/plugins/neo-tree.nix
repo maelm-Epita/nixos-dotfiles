@@ -1,8 +1,8 @@
 {
-  plugins.web-devicons = {
+  programs.nixvim.plugins.web-devicons = {
     enable = true;
   };
-  plugins.neo-tree = {
+  programs.nixvim.plugins.neo-tree = {
     enable = true;
   };
 }
