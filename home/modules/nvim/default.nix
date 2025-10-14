@@ -1,11 +1,8 @@
 {pkgs, lib, ...}: {
-  # Dependencies that cannot be installedd through extraPackages
-  programs.python = {
-    enable = true;
-    package = pkgs.python313;
-    pipPackages = [
-      pkgs.python313.pylatexenc
-    ];
-  };
+  # Dependencies that cannot be installed through extraPackages
+  home.packages = with pkgs [
+    python313
+    python313Packages.pylatexenc
+  ];
   programs.nixvim = import ./nixvim;
 }
