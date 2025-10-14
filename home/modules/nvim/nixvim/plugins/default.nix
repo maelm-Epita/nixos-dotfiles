@@ -1,6 +1,9 @@
 {
   imports = [
-    ./web-devicons.nix
+    # DEPENDENCIES
+    #./web-devicons.nix
+
+    # PLUGINS
     ./treesitter.nix
     ./telescope.nix
     ./lualine.nix
@@ -10,4 +13,5 @@
     ./neo-tree.nix
     ./markdown.nix
   ];
+
 }

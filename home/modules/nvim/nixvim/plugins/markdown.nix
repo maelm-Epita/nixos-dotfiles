@@ -1,5 +1,6 @@
 {
   plugins = {
-  # TODO
+    render-markdown.enable = true;
+    markdown-preview.enable = true;
   };
 }
