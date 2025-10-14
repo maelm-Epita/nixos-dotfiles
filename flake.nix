@@ -10,7 +10,7 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ...}: 
+  outputs = { self, nixpkgs, home-manager, nixvim, ...}: 
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -27,7 +27,7 @@
       mael = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 	modules = [ 
-	  nixvim.homeManagerModules.nixvim
+	  nixvim.homeModules.nixvim
 	  ./home/home.nix
 	];
       };
