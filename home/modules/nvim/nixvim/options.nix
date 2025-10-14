@@ -1,7 +1,7 @@
 {
   options = {
     number = true;
-    relativenumber - true;
+    relativenumber = true;
     expandtab = true;
     shiftwidth = 4;
     tabstop = 4;

@@ -1,6 +1,5 @@
 {pkgs, lib, ...}: {
   enable = true;
-  colorscheme = "rose-pine";
 
   imports = [
     ./options.nix
@@ -8,6 +7,6 @@
     ./plugins
   ];
   
-  extraLuaConfig = ''
+  extraConfigLua = ''
   '';
 }
