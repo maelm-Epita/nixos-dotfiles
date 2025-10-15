@@ -1,6 +1,6 @@
 {pkgs, lib, ...}: {
   imports = [
-    ./zsh.nix
+    ./zsh
     ./environment.nix
   ];
 }

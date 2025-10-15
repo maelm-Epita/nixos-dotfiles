@@ -5,6 +5,7 @@
       ./treesitter.nix
       ./lualine.nix
       ./flash.nix
+      ./completion.nix
       ./dashboard.nix
       ./lspconfig.nix
       ./markdown.nix
