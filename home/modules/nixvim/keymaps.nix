@@ -58,5 +58,22 @@
         key = "<C-g>";
         action.__raw = "vim.diagnostic.open_float";
     }
+
+    # -- LSP -- #
+    {
+        mode = "n";
+        key = "K";
+        action.__raw = "vim.lsp.buf.hover";
+    }
+    {
+        mode = "n";
+        key = "gd";
+        action.__raw = "vim.lsp.buf.definition";
+    }
+    {
+        mode = "n";
+        key = "<leader>ca";
+        action.__raw = "vim.lsp.buf.code_action";
+    }
     ];
 }
