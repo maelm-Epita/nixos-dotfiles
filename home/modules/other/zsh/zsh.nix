@@ -20,6 +20,11 @@ in
         };
         # -- Highlighting -- #
         syntaxHighlighting.enable = true;
+        # -- Bindings -- #
+        initExtra = ''
+            bindkey '^N' autosuggest-accept
+        '';
+        # -- Aliases -- #
         shellAliases = {
             ls="ls -A --color=auto";
             neofetch="fastfetch";
