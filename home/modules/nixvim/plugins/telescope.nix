@@ -1,6 +1,6 @@
 {
   programs.ripgrep.enable = true;
-
+    
   programs.nixvim.plugins.web-devicons = {
     enable = true;
   };
@@ -8,6 +8,7 @@
     enable = true;
     extensions = {
         fzf-native.enable = true;
+        ui-select.enable = true;
     };
     keymaps = {
         "<leader>ff" = "find_files";

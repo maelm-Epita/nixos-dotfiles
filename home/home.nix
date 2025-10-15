@@ -31,6 +31,7 @@
     fcitx5
     fcitx5-mozc
     cascadia-code
+    noto-fonts-cjk-sans
   ];
 
   fonts.fontconfig.enable = true;

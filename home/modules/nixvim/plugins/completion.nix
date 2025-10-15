@@ -1,5 +1,5 @@
 {
-    programs.nixvim.cmp = {
+    programs.nixvim.plugins.cmp = {
         enable = true;
         autoEnableSources = true;
         settings = {
@@ -9,14 +9,15 @@
                 { name = "buffer"; }
             ];
             mapping = {
-                "<C-n>" = "cmp.mapping.complete()";
-                "<C-e>" = "cmp.mapping.close()";
-                "<C-j>" = "cmp.mapping.scroll_docs(-4)";
-                "<C-k>" = "cmp.mapping.scroll_docs(4)";
+                "<C-Space>" = "cmp.mapping.complete()";
+                "<C-e>" = "cmp.mapping.abort()";
+                "<C-j>" = "cmp.mapping.select_next_item {behavior = cmp.SelectBehavior.Insert}";
+                "<C-k>" = "cmp.mapping.select_prev_item {behavior = cmp.SelectBehavior.Insert}";
+                "<C-n>" = "cmp.mapping.confirm({select = true})";
             };
             window = {
-                completion = "cmp.config.window.bordered()";
-                documentation = "cmp.config.window.bordered()";
+                completion.border = "rounded";
+                documentation.border = "rounded";
             };
         };
     };

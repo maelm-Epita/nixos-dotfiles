@@ -21,7 +21,7 @@ in
         # -- Highlighting -- #
         syntaxHighlighting.enable = true;
         # -- Bindings -- #
-        initExtra = ''
+        initContent = ''
             bindkey '^N' autosuggest-accept
         '';
         # -- Aliases -- #
