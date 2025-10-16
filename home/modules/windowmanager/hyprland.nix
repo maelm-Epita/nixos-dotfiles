@@ -1,8 +1,26 @@
-{config, pkgs, lib, ...}: 
+{config, pkgs, ...}: 
 let
   session = config.home.sessionVariables;
 in
 {
+    # -- Dependencies -- #
+    home.packages = with pkgs; [
+        grim
+        slurp
+        pamixer
+        brightnessctl
+    ];
+    # ------------------- #
+
+    # -- Hyprland related -- #
+    services.hyprpaper = {
+        enable = true;
+        settings = {
+            preload = [ "/home/mael/Downloads/temp_wall.jpg" ];
+            wallpaper = [ "/home/mael/Downloads/temp_wall.jpg" ];
+        };
+    };
+
     wayland.windowManager.hyprland = { 
     enable = true;
     settings = {
@@ -115,11 +133,11 @@ in
 	"$mod SHIFT, 9, movetoworkspace, 9"
 	"$mod SHIFT, 0, movetoworkspace, 10"
 	# FN keys
-	", XF86AudioLowerVolume, exec, amixer set master 5%-"
-	", XF86AudioRaiseVolume, exec, amixer set master 5%+"
-	", XF86AudioMute, exec, amixer set Master toggle"
-	", XF86MonBrightnessDown, exec, backlight_control -10"
-	", XF86MonBrightnessDown, exec, backlight_control +10"
+	", XF86AudioLowerVolume, exec, pamixer -d 5 Master"
+	", XF86AudioRaiseVolume, exec, pamixer -i 5 Master"
+	", XF86AudioMute, exec, pamixer -t Master"
+	", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+	", XF86MonBrightnessDown, exec, brightnessctl set 5%+"
       ];
       bindm = [
 	"$mod, mouse:272, movewindow"

@@ -12,24 +12,27 @@
 
   home.packages = with pkgs; [
     # neovim -- is installed through nixvim ; installing it from pkgs breaks the configuration
+    # -- DE -- #
     blueman
     pavucontrol
-    git
     foot
-    firefox
     waybar
     xfce.thunar
     rofi
-    fastfetch
     swaylock-effects
-    btop
-    anki
-    grim
-    slurp
     wl-clipboard
+    # -- TERMINAL TOOLS -- #
+    git
+    btop
+    pamixer
+    brightnessctl
+    # -- APPS -- #
+    firefox
     vesktop
-    fcitx5
-    fcitx5-mozc
+    anki
+    # -- RICING -- #
+    fastfetch
+    # -- FONTS -- #
     cascadia-code
     noto-fonts-cjk-sans
   ];
