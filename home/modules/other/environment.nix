@@ -7,5 +7,14 @@
     SCREENSHOT = "grim -g \\$(slurp -d) - | wl-copy";
     OCR = "a";
     LOCK = "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --show-failed-attempts --indicator-idle-visible";
+
+    # -- FCITX -- #
+    GTK_IM_MODULE="fcitx";
+    QT_IM_MODULE="fcitx";
+    XMODIFIERS="@im=fcitx";
+    IMSETTINGS_MODULE="fcitx";
+    SDL_IM_MODULE="fcitx";
+    INPUT_METHOD="fcitx";
+
   };
 }
