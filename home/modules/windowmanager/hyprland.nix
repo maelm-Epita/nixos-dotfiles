@@ -27,13 +27,13 @@ in
 
 # -- Hyprland related -- #
     home.sessionVariables = {
-        FLAKEDIR = "~/dotfiles/";
+        FLAKEDIR = "~/dotfiles/"; # Not portable so it may need to be changed
         TERMINAL = "foot";
         LAUNCHER = "rofi -show drun -location 2 --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto";
         FILEMANAGER = "thunar";
         SCREENSHOT = "grim -g \\$(slurp -d) - | wl-copy";
         LOCK = "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --show-failed-attempts --indicator-idle-visible";
-        POWERPROFILE = "./scripts/power-profile-switch.sh";
+        POWERPROFILE = "${builtins.toString ./.}/scripts/power-profile-switch.sh";
     };
 
     services.hyprpaper = {
