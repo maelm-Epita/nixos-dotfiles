@@ -21,8 +21,8 @@
     networking.networkmanager.enable = true;
 
     # -- AUDIO -- #
-    hardware.pulseaudio.enable = false;
     security.rtkit.enable = true;
+    services.pulseaudio.enable = false;
     services.pipewire = {
         enable = true;
         alsa.enable = true;
@@ -65,7 +65,62 @@
     };
     security.sudo.wheelNeedsPassword = false;
 
+    # -- BATTERY -- #
+    services.upower.enable = true;
+    services.power-profiles-daemon.enable = true;
+    systemd.services.set-default-power-profile = {
+        description = "Set default power profile at boot to balanced";
+        after = [ "power-profiles-daemon.service" ];
+        wants = [ "power-profiles-daemon.service" ];
+        serviceConfig = {
+            Type = "oneshot";
+            ExecStart = [ "${pkgs.power-profiles-daemon}/bin/powerprofilesctl set balanced" ];
+        };
+        wantedBy = [ "default.target" ];
+    };
+    services.udev.extraRules = ''
+    SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ACTION=="change", RUN+="${pkgs.systemd}/bin/systemctl start ac-adapter-change.service"
+    '';
 
+    systemd.services.ac-adapter-change = {
+        description = "Switch power profile when AC adapter changes state";
+        serviceConfig = {
+            Type = "oneshot";
+            ExecStart = [
+                (pkgs.writeShellScript "ac-adapter-change" ''
+                    PROFILE_FILE="/run/ac-adapter-change-previous-profile"
+                    if grep -q 1 /sys/class/power_supply/AC/online; then
+                        echo "$(${pkgs.power-profiles-daemon}/bin/powerprofilesctl get)" > "$PROFILE_FILE"
+                        ${pkgs.power-profiles-daemon}/bin/powerprofilesctl set performance
+                    else
+                        if [ -f "$PROFILE_FILE" ]; then
+                            profile=$(cat "$PROFILE_FILE")
+                        else
+                            profile="balanced"
+                        fi
+                        ${pkgs.power-profiles-daemon}/bin/powerprofilesctl set "$profile"
+                    fi
+                '')
+            ];
+        };
+    };
+    # Toggled imperatively because it makes feel sluggish
+    #powerManagement = {
+    #    enable = true;
+    #    powertop.enable = true;
+    #};
+    #services.tlp = {
+    #    enable = true;
+    #    settings = {
+    #        #CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+    #        #CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+    #        #WIFI_PWR_ON_BAT = "on";
+    #        #RUNTIME_PM_ON_BAT = "auto";
+    #        #USB_AUTOSUSPEND = 1;
+    #        #DISK_DEVICES = [ "nvme0n1" ];
+    #        #DISK_APM_LEVEL_ON_BAT = "128";
+    #    };
+    #};
 
     # -- PACKAGES -- #
     # Programs I need to enable system wide because of permissions

@@ -4,6 +4,7 @@ session = config.home.sessionVariables;
 in
 {
 # -- Dependencies -- #
+
     home.packages = with pkgs; [
         grim
         slurp
@@ -21,9 +22,20 @@ in
             ];
         };
     };
-# ------------------- #
+# ---------------- #
+
 
 # -- Hyprland related -- #
+    home.sessionVariables = {
+        FLAKEDIR = "~/dotfiles/";
+        TERMINAL = "foot";
+        LAUNCHER = "rofi -show drun -location 2 --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto";
+        FILEMANAGER = "thunar";
+        SCREENSHOT = "grim -g \\$(slurp -d) - | wl-copy";
+        LOCK = "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --show-failed-attempts --indicator-idle-visible";
+        POWERPROFILE = "./scripts/power-profile-switch.sh";
+    };
+
     services.hyprpaper = {
         enable = true;
         settings = {
@@ -111,7 +123,7 @@ in
                  "$mod, R, exec, ${session.LAUNCHER}"
                  "$mod, E, exec, ${session.FILEMANAGER}"
                  "$mod, S, exec, bash -c \"${session.SCREENSHOT}\""
-                 "$mod, M, exec, ${session.OCR}"
+                 "$mod, P, exec, bash -c \"${session.POWERPROFILE}\""
                  ", XF86PowerOff, exec, ${session.LOCK}"
 # main shortcuts
                  "$mod, C, killactive"

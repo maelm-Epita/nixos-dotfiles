@@ -20,6 +20,7 @@
 						"backlight/slider"
 						"network"
 						"hyprland/language"
+                        "custom/power-profile"
 						"battery"
 						"custom/power"
 				];
@@ -86,8 +87,13 @@
 					icon = true;
 					icon-size = 20;
 				};
+				"custom/power-profile" = {
+                    exec = "powerprofilesctl get";
+					format = "Profile: {} ⚡︎";
+                    interval = 5;
+				};
 				"custom/power" = {
-					format = "⏻ ";
+					format = " ⏻ ";
 					tooltip = false;
 					menu = "on-click";
 					menu-file = "/hom/mael/.config/waybar/power_menu.xml";

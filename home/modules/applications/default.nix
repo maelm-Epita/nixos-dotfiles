@@ -4,5 +4,7 @@
     ./rofi.nix
     ./foot.nix
     ./waybar.nix
+    ./dunst.nix
+    ./fcitx.nix
   ];
 }
