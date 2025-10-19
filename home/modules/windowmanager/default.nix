@@ -1,6 +1,7 @@
 {pkgs, lib, ...}: {
   imports = [
     ./hyprland.nix
-    ./thumbnails.nix
+    ./wallpaper.nix
+    #./thumbnails.nix
   ];
 }

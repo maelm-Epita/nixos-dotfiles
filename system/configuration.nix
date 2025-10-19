@@ -134,6 +134,7 @@
     ];
 
     # -- SERVICES -- #
+    services.tumbler.enable = true; # Get thumbnails for file managers
     services.openssh.enable = true;
     services.displayManager = {
         sddm = {

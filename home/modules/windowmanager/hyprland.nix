@@ -35,18 +35,11 @@ in
         POWERPROFILE = "${builtins.toString ./.}/scripts/power-profile-switch.sh";
     };
 
-    services.hyprpaper = {
-        enable = true;
-        settings = {
-            preload = [ "/home/mael/Downloads/temp_wall.jpg" ];
-            wallpaper = [ "/home/mael/Downloads/temp_wall.jpg" ];
-        };
-    };
-
     wayland.windowManager.hyprland = { 
         enable = true;
         settings = {
             exec-once=[
+                "hyprpaper"
                 "waybar"
                 "fcitx5 -d -r --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
             ];
