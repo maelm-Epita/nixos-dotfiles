@@ -6,8 +6,7 @@ in
 # -- Dependencies -- #
 
     home.packages = with pkgs; [
-        grim
-        slurp
+        hyprshot
         pamixer
         brightnessctl
     ];
@@ -31,7 +30,7 @@ in
         TERMINAL = "foot";
         LAUNCHER = "rofi -show drun -location 2 --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto";
         FILEMANAGER = "thunar";
-        SCREENSHOT = "grim -g \\$(slurp -d) - | wl-copy";
+        SCREENSHOT = "hyprshot -m region --clipboard-only";
         LOCK = "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --show-failed-attempts --indicator-idle-visible";
         POWERPROFILE = "${builtins.toString ./.}/scripts/power-profile-switch.sh";
     };
@@ -164,7 +163,7 @@ in
                  ", XF86AudioRaiseVolume, exec, pamixer -i 5 Master"
                  ", XF86AudioMute, exec, pamixer -t Master"
                  ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
-                 ", XF86MonBrightnessDown, exec, brightnessctl set 5%+"
+                 ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
                  ];
             bindm = [
                 "$mod, mouse:272, movewindow"
