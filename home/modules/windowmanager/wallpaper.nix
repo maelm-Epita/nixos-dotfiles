@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+    # Dependencies
+    home.packages = with pkgs; [ pywal ];
     services.wpaperd = {
         enable = true;
         settings = {
@@ -7,6 +9,7 @@
                 mode = "center";
                 duration = "30m";
                 initial-transition = false;
+                exec = "${builtins.toString ./.}/scripts/wallpaper-wal.sh";
             };
         };
     };

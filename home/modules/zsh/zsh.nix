@@ -1,8 +1,9 @@
-{config,  ...}: 
+{pkgs, config,  ...}: 
 let
 session = config.home.sessionVariables;
 in
 {
+    home.packages = with pkgs; [ pywal ];
     programs.zsh = {
         enable = true;
         # -- Autosuggestions -- #
@@ -20,8 +21,9 @@ in
         };
         # -- Highlighting -- #
         syntaxHighlighting.enable = true;
-        # -- Bindings -- #
+        # -- Initialization -- #
         initContent = ''
+            cat ${config.xdg.cacheHome}/wal/sequences &
             bindkey '^N' autosuggest-accept
         '';
         # -- Aliases -- #
