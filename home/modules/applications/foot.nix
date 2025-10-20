@@ -3,32 +3,31 @@
         enable = true;
         settings = {
             main = {
-                pad="0x0";
+                pad="15x15";
                 font="cascadiacode:size=14";
             };
             cursor = {
                 blink="yes";
             };
             colors = {
-                cursor="191724 e0def4";
-                background="191724";
-                foreground="e0def4";
-                regular0="26233a";
-                regular1="eb6f92";
-                regular2="31748f";
-                regular3="f6c177";
-                regular4="9ccfd8";
-                regular5="c4a7e7";
-                regular6="ebbcba";
-                regular7="e0def4";
-                bright0="6e6a86";
-                bright1="eb6f92";
-                bright2="31748f";
-                bright3="f6c177";
-                bright4="9ccfd8";
-                bright5="c4a7e7";
-                bright6="ebbcba";
-                bright7="e0def4";
+                background="0c1e2a";
+                foreground="e4f7f6";
+                regular0="22577A";
+                regular1="38A3A5";
+                regular2="57CC99";
+                regular3="0C907D";
+                regular4="FF9B17";
+                regular5="FCB454";
+                regular6="624E88";
+                regular7="CB80AB";
+                bright0="bcebeb";
+                bright1="a8e5e5";
+                bright2="94dfdf";
+                bright3="b9ead5";
+                bright4="a5e4c9";
+                bright5="91debd";
+                bright6="eaed86";
+                bright7="eed885";
                 alpha="0.7";
             };
         };

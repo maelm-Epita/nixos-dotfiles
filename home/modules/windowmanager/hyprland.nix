@@ -29,7 +29,7 @@ in
         FLAKEDIR = "~/dotfiles/"; # Not portable so it may need to be changed
         TERMINAL = "foot";
         LAUNCHER = "rofi -show drun -location 2 --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto";
-        FILEMANAGER = "thunar";
+        FILEMANAGER = "dolphin";
         SCREENSHOT = "hyprshot -m region --clipboard-only";
         LOCK = "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --show-failed-attempts --indicator-idle-visible";
         POWERPROFILE = "${builtins.toString ./.}/scripts/power-profile-switch.sh";
