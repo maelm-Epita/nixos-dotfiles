@@ -1,11 +1,13 @@
 {pkgs, ...}: {
-    services.wpaper = {
+    services.wpaperd = {
         enable = true;
         settings = {
-            duration = "30m";
-            mode = "center";
-            path = "/home/mael/Images/wallpapers/current/";
-            initial-transition = false;
+            default = {
+                path = "/home/mael/Images/wallpapers/current/";
+                mode = "center";
+                duration = "30m";
+                initial-transition = false;
+            };
         };
     };
 }
