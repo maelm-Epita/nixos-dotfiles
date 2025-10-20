@@ -7,6 +7,7 @@ in
 
     home.packages = with pkgs; [
         hyprshot
+        hyprshade
         pamixer
         brightnessctl
     ];
@@ -40,6 +41,7 @@ in
         settings = {
             exec-once=[
                 "hyprpaper"
+                "hyprshade ${builtins.toString ./.}/shaders/betterglass.glsl"
                 "waybar"
                 "fcitx5 -d -r --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
             ];
@@ -71,6 +73,7 @@ in
                     size = 2;
                     passes = 3;
                     vibrancy = 0.5 ;
+                    noise = 0.015;
                 };
                 shadow = {
                     enabled = true;

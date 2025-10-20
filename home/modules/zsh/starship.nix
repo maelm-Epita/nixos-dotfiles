@@ -8,14 +8,14 @@
             format = "$username(@$hostname) $directory $git_branch \n  [⮑](fg:iris) ";
             right_format = "$cmd_duration";
             add_newline = true;
-            palette = "rose-pine";
-            palettes.rose-pine = {
+            palette = "custom";
+            palettes.custom= {
                 overlay = "#26233a";
-                love = "#eb6f92";
                 gold = "#f6c177";
-                rose = "#ebbcba";
                 pine = "#31748f";
+                rose = "#57CC99";
                 foam = "#9ccfd8";
+                love = "#93b8e4";
                 iris = "#c4a7e7";
                 text = "#e0def4";
             };

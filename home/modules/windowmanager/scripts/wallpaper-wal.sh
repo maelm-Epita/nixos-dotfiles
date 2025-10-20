@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-wal -i -q "$2"
+wal -q -i "$2"

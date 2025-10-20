@@ -23,7 +23,7 @@ in
         syntaxHighlighting.enable = true;
         # -- Initialization -- #
         initContent = ''
-            cat ${config.xdg.cacheHome}/wal/sequences &
+            (cat ${config.xdg.cacheHome}/wal/sequences &)
             bindkey '^N' autosuggest-accept
         '';
         # -- Aliases -- #

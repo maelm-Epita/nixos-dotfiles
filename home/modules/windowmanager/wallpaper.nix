@@ -9,7 +9,7 @@
                 mode = "center";
                 duration = "30m";
                 initial-transition = false;
-                exec = "${builtins.toString ./.}/scripts/wallpaper-wal.sh";
+                #exec = "${builtins.toString ./.}/scripts/wallpaper-wal.sh";
             };
         };
     };
