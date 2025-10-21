@@ -2,6 +2,7 @@
     imports = [
       ./neo-tree.nix
       ./colorizer.nix
+      ./transparent.nix
       ./telescope.nix
       ./treesitter.nix
       ./lualine.nix

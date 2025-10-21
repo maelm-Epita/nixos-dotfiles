@@ -7,7 +7,6 @@ in
 
     home.packages = with pkgs; [
         hyprshot
-        hyprshade
         pamixer
         brightnessctl
     ];
@@ -41,7 +40,6 @@ in
         settings = {
             exec-once=[
                 "hyprpaper"
-                "hyprshade ${builtins.toString ./.}/shaders/betterglass.glsl"
                 "waybar"
                 "fcitx5 -d -r --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
             ];
@@ -58,28 +56,23 @@ in
                 sensitivity = 0;
             };
             general = {    
-                gaps_in = 0;
+                gaps_in = 5;
                 gaps_out = 10;
                 border_size = 2;
-                "col.active_border" = "rgba(FFFFFFFF)";
+                "col.active_border" = "rgba(fafdffaa) rgba(e1f3ff00) rgba(e1f3ff00) rgba(fafdffaa) 135deg";
                 layout = "dwindle";
                 allow_tearing = false;
             };
             decoration = {
-                rounding = 0;
+                rounding = 6;
 
                 blur = {
                     enabled = true;
                     size = 2;
                     passes = 3;
                     vibrancy = 0.5 ;
-                    noise = 0.015;
-                };
-                shadow = {
-                    enabled = true;
-                    range = 20;
-                    render_power = 3;
-                    color = "rgba(00000099)";
+                    brightness = 1;
+                    noise = 0.01;
                 };
             };
             animations = {
