@@ -3,6 +3,7 @@
     enable = true;
     settings = {
         options = {
+            theme = "auto";
             component_separators = { 
                 left = " "; 
                 right = " ";

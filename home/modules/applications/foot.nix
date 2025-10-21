@@ -10,7 +10,7 @@
                 blink="yes";
             };
             colors = {
-                #background="000000";
+                #background="ffffff";
                 #foreground="e4f7f6";
                 #regular0="24311d";
                 #regular1="dea870";

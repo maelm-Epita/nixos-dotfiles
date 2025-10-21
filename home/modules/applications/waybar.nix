@@ -1,6 +1,8 @@
 {pkgs, lib, ...}: {
 	programs.waybar = {
 		enable = true;
+        #style = {
+        #};
 		settings = {
 			bar = {
 				position = "top";
