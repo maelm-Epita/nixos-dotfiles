@@ -2,7 +2,7 @@
   imports = [
     ./hyprland.nix
     ./wallpaper.nix
-    ./gtk-qt.nix
+    ./theme.nix
     #./thumbnails.nix
   ];
 }
