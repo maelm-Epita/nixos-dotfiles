@@ -3,6 +3,5 @@
     ./hyprland.nix
     ./wallpaper.nix
     ./theme.nix
-    #./thumbnails.nix
   ];
 }

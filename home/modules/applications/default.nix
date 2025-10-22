@@ -4,8 +4,9 @@
     ./rofi.nix
     ./foot.nix
     ./waybar.nix
-        #./dunst.nix
     ./mako.nix
     ./fcitx.nix
+    ./zsh
+    ./nixvim
   ];
 }
