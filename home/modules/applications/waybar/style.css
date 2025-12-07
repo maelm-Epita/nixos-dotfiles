@@ -1,0 +1,104 @@
+* {
+    font-family: Cascadia Code;
+    font-size: 16px;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#window label {
+    /*background-color: transparent;*/
+    font-weight: bold;
+}
+
+#workspaces {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+#workspaces button{
+    color: 	#89b4fa;
+    background: #09090F;
+    margin-right: 10px;
+    border-radius: 10px;
+
+    box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
+    padding: 12px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    font-weight: bolder;
+    transition: border-radius 0.2s ease-out;
+    transition-duration: 0.5s;
+}
+
+#workspaces button.active{
+    background: #89b4fa ;
+    color: #09090F;
+    margin-right: 10px;
+    border-radius: 15px;
+
+    background-size: 400% 400%;
+    color: black;
+
+}
+
+#window,
+#network,
+#clock,
+#backlight,
+#custom-power,
+#custom-power-profile,
+#custom-audio-backlight-tray,
+#custom-settings-tray,
+#hyprland-language,
+#pulseaudio,
+#battery {
+    color:  #d2e3fd;
+    background: #09090F;
+    /*background: rgba(0,0,0,0.8);*/
+
+    margin-right: 10px;
+    border-radius: 15px;
+
+    box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
+    padding: 20px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    font-weight: bolder;
+
+    margin-top: 10px;
+}
+
+#clock {
+    background: #09090F;
+
+    background-size: 200% 300%;
+
+    animation: gradient_f_nh 4s linear infinite;
+    margin-right: 25px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+}
+
+#window {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+#taskbar {
+    background: #09090F;
+    border: none;
+    color: 	#89b4fa;
+
+    margin-right: 10px;
+    border-radius: 15px;
+    min-width: 45px;
+
+    /*box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;*/
+    padding: 5px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    font-weight: bolder;
+
+    margin-top: 10px;
+}

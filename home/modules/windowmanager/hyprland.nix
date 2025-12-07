@@ -29,7 +29,7 @@ in
         FLAKEDIR = "~/dotfiles/"; # Not portable so it may need to be changed
         TERMINAL = "foot";
         LAUNCHER = "rofi -show drun -location 2 --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto";
-        FILEMANAGER = "dolphin";
+        FILEMANAGER = "thunar";
         SCREENSHOT = "hyprshot -m region --clipboard-only";
         LOCK = "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --show-failed-attempts --indicator-idle-visible";
         POWERPROFILE = "${builtins.toString ./.}/scripts/power-profile-switch.sh";
@@ -58,8 +58,9 @@ in
             general = {    
                 gaps_in = 5;
                 gaps_out = 10;
-                border_size = 2;
-                "col.active_border" = "rgba(fafdffaa) rgba(e1f3ff00) rgba(e1f3ff00) rgba(fafdffaa) 135deg";
+                border_size = 1;
+                #"col.active_border" = "rgba(fafdffaa) rgba(e1f3ff00) rgba(e1f3ff00) rgba(fafdffaa) 135deg";
+                "col.active_border" = "rgba(ffffffff)";
                 layout = "dwindle";
                 allow_tearing = false;
             };
@@ -71,7 +72,7 @@ in
                     size = 2;
                     passes = 3;
                     vibrancy = 0.5 ;
-                    brightness = 1;
+                    #brightness = 1;
                     noise = 0.01;
                 };
             };

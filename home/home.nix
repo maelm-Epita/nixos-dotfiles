@@ -16,7 +16,7 @@
         pavucontrol
         foot
         waybar
-        kdePackages.dolphin
+        xfce.thunar
         rofi
         swaylock-effects
         qimgv

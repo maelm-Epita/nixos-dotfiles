@@ -1,0 +1,106 @@
+(defpoll volume :interval "20ms" "pamixer --get-volume")
+(defpoll muted :interval "20ms" "pamixer --get-mute")
+(defpoll brightness :interval "20ms" "brightnessctl g")
+(defpoll wifi :interval "100ms" "nmcli -g GENERAL.CONNECTION dev show $(nmcli -g GENERAL.TYPE,GENERAL.DEVICE dev show | grep '^wifi$' -A 1 | grep '[^wifi]')")
+(defpoll language :interval "100ms" "")
+(defpoll powerprofile :interval "100ms" "powerprofilesctl get")
+
+(defwindow volume-brightness-menu 
+    :monitor 0
+    :geometry (geometry
+        :x "30px"
+        :y "10px"
+        :width "100px"
+        :height "60px"
+        :anchor "top right")
+    :stacking "fg"
+    :exclusive false
+    :focusable false
+    :visible false
+    :windowtype "dock"
+    :wm-ignore true
+    (eventbox :onhoverlost "${EWW_CONFIG_DIR}/eww_wrapper.sh volume-brightness-menu"
+        (box
+            :orientation "horizontal"
+            :space-evenly "true"
+            :class "vb-menu"
+            (box
+                :orientation "vertical"
+                :space-evenly "true"
+                :class "vb-menu"
+                (label :text " Volume")
+                (scale
+                    :orientation "vertical"
+                    :flipped true 
+                    :draw-value true
+                    :value-pos "bottom"
+                    :value {muted == "false" ? volume : 0}
+                    :onchange 
+                    "if [ ! {} -eq 0 ]; then
+                        pamixer -u
+                        fi
+                        pamixer --set-volume {}"
+                )
+            )
+            (box
+                :orientation "vertical"
+                :space-evenly "true"
+                :class "vb-menu"
+                (label :text "☀︎ Brightness")
+                (scale
+                    :orientation "vertical"
+                    :flipped true
+                    :draw-value true
+                    :value-pos "bottom"
+                    :min 100
+                    :max 1500
+                    :value brightness
+                    :onchange "brightnessctl s {}"
+                )
+            )
+        )
+    )
+)
+
+(defwindow settings-menu
+    :monitor 0
+    :geometry (geometry
+        :x "30px"
+        :y "10px"
+        :width "100px"
+        :height "60px"
+        :anchor "top right")
+    :stacking "fg"
+    :exclusive false
+    :focusable false
+    :visible false
+    :windowtype "dock"
+    :wm-ignore true
+    (eventbox :onhoverlost "${EWW_CONFIG_DIR}/eww_wrapper.sh volume-brightness-menu"
+        (box
+            :orientation "vertical"
+            :space-evenly "true"
+            :class "vb-menu"
+            (box
+                :orientation "horizontal"
+                :space-evenly "false"
+                :class "vb-menu"
+                (label :text "Wifi: ${wifi == "" ? "Disconnected" : wifi}")
+                (button
+                    :onclick "foot -e nmtui & disown"
+                    (label :text "⚙ ")
+                )
+            )
+            (box
+                :orientation "horizontal"
+                :space-evenly "true"
+                :class "vb-menu"
+                (label :text "Power profile: ${powerprofile}")
+                (button
+                    :onclick "${EWW_CONFIG_DIR}/power-profile-switch.sh"
+                    (label :text "Next")
+                )
+            )
+        )
+    )
+)

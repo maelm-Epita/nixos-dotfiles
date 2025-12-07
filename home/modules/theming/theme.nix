@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+    home.packages = with pkgs; [
+        libsForQt5.qt5ct
+        libsForQt5.qtstyleplugin-kvantum
+        whitesur-kde
+    ];
     home.sessionVariables = {
         XCURSOR_THEME = "WhiteSur-cursors";
         XCURSOR_SIZE = "24";
@@ -6,7 +11,6 @@
         ICON_THEME = "WhiteSur-dark";
         GTK_APPLICATION_PREFER_DARK_THEME = "1";
         QT_QPA_PLATFORMTHEME = "qt5ct";
-        QT_STYLE_OVERRIDE = "kvantum";
     };
     gtk = {
         enable = true;
@@ -25,14 +29,21 @@
     };
     qt = {
         enable = true;
-        platformTheme = "qt5ct";
+        platformTheme.name = "qtct";
         style = {
-            package = pkgs.kvantum;
-            name = "kvantum";
+            package = pkgs.whitesur-kde;
+        };
+        kde.settings = {
+            kdeglobals = {
+                UiSettings = {
+                    ColorScheme = "qt5ct";
+                };
+            };
         };
     };
     xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
     [General]
-    theme=WhiteSur-Dark
+    theme=WhiteSurDark
     '';
+    home.file.".config/Kvantum/WhiteSurDark".source = "${pkgs.whitesur-kde}/share/Kvantum/WhiteSur";
 }

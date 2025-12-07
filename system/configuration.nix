@@ -104,33 +104,24 @@
             ];
         };
     };
-    # Toggled imperatively because it makes feel sluggish
-    #powerManagement = {
-    #    enable = true;
-    #    powertop.enable = true;
-    #};
-    #services.tlp = {
-    #    enable = true;
-    #    settings = {
-    #        #CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-    #        #CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-    #        #WIFI_PWR_ON_BAT = "on";
-    #        #RUNTIME_PM_ON_BAT = "auto";
-    #        #USB_AUTOSUSPEND = 1;
-    #        #DISK_DEVICES = [ "nvme0n1" ];
-    #        #DISK_APM_LEVEL_ON_BAT = "128";
-    #    };
-    #};
 
     # -- PACKAGES -- #
     # Programs I need to enable system wide because of permissions
     programs.hyprland.enable = true;
     programs.zsh.enable = true;
+    programs.steam = {
+        enable = true;
+        extraPackages = with pkgs; [
+            pkgsi686Linux.glibc
+        ];
+    };
     nixpkgs.config.allowUnfree = true;
     # Basic needed packages
     environment.systemPackages = with pkgs; [
         vim
         git
+        glibc
+        glibc_multi
     ];
 
     # -- SERVICES -- #
@@ -144,8 +135,18 @@
     };
     services.logind.settings.Login.HandlePowerKey = "ignore";
 
+    # -- MAN PAGES -- #
+    documentation.enable = true;
+
+    # -- OPENGL -- #
+    hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+    };
+
     # -- NIX SYSTEM -- #
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
