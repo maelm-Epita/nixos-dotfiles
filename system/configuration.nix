@@ -2,8 +2,32 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
+{ config, pkgs, silentSDDM,...}:
+let 
+    sddm-theme = let
+        background = pkgs.fetchurl {
+            url = "https://w.wallhaven.cc/full/5g/wallhaven-5gel59.jpg";
+            hash = "sha256-7zGpGvh4E7QyuJxVlnUBClhrK2U+hNQrrfADWl45BAw=";
+        };
+    in silentSDDM.packages.${pkgs.system}.default.override {
+            theme = "default";
+            extraBackgrounds = [ background ];
+            theme-overrides = {
+                "LoginScreen" = {
+                    blur = 3;
+                    use-background-color = true;
+                    background-color = "#000000FA";
+                    background = "${background.name}";
+                };
+                "LockScreen" = {
+                    blur = 3;
+                    use-background-color = true;
+                    background-color = "#000000FA";
+                    background = "${background.name}";
+                };
+            };
+        };
+in
 {
     imports =
         [ # Include the results of the hardware scan.
@@ -122,6 +146,9 @@
         git
         glibc
         glibc_multi
+
+        sddm-theme 
+        sddm-theme.test
     ];
 
     # -- SERVICES -- #
@@ -129,8 +156,17 @@
     services.openssh.enable = true;
     services.displayManager = {
         sddm = {
+            package = pkgs.kdePackages.sddm;
             enable = true;
             wayland.enable = true;
+            theme = sddm-theme.pname;
+            extraPackages = sddm-theme.propagatedBuildInputs;
+            settings = {
+                General = {
+                    GreeterEnvironment = "QML2_IMPORT_PATH=${sddm-theme}/share/sddm/themes/${sddm-theme.pname}/components/,QT_IM_MODULE=qtvirtualkeyboard";
+                    InputMethod = "qtvirtualkeyboard";
+                };
+            };
         };
     };
     services.logind.settings.Login.HandlePowerKey = "ignore";

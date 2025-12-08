@@ -42,7 +42,7 @@ in
         settings = {
             exec-once=[
                 "hyprpaper"
-                "waybar"
+                #"hyprpanel"
                 "fcitx5 -d -r --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
             ];
             monitor = [

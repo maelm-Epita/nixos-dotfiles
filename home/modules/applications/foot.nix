@@ -3,9 +3,11 @@
         enable = true;
         settings = {
             main = {
-                notify="off";
                 pad="15x15";
                 font="cascadiacode:size=14";
+            };
+            bell = {
+                notify="no";
             };
             cursor = {
                 blink="yes";

@@ -8,9 +8,13 @@
         nixvim.url = "github:nix-community/nixvim";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         nixvim.inputs.nixpkgs.follows = "nixpkgs";
+        silentSDDM = {
+            url = "github:uiriansan/SilentSDDM";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
-    outputs = { self, nixpkgs, home-manager, nixvim, ...}: 
+    outputs = { self, nixpkgs, home-manager, nixvim, silentSDDM, ...}: 
         let
             lib = nixpkgs.lib;
             system = "x86_64-linux";
@@ -23,6 +27,7 @@
             nixosConfigurations = {
                 elitebook = lib.nixosSystem {
                     inherit system;
+                    specialArgs = {inherit silentSDDM;};
                     modules = [ ./system/configuration.nix ];
                 };
             };
