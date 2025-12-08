@@ -1,6 +1,9 @@
 {pkgs, ...}: {
-    # Dependencies
-    home.packages = with pkgs; [ pywal ];
+    #home.packages = with pkgs; [ imagemagick ];
+    #programs.pywal = {
+    #    enable = true;
+    #    package = pkgs.pywal16;
+    #};
     services.wpaperd = {
         enable = true;
         settings = {
@@ -9,7 +12,6 @@
                 mode = "center";
                 duration = "30m";
                 initial-transition = false;
-                #exec = "${builtins.toString ./.}/scripts/wallpaper-wal.sh";
             };
         };
     };

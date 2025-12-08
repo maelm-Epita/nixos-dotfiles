@@ -9,6 +9,8 @@ in
         hyprshot
         pamixer
         brightnessctl
+        hyprpaper
+        hyprpanel
     ];
     i18n.inputMethod = {
         type = "fcitx5";

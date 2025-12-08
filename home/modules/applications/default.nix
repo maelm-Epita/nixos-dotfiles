@@ -3,10 +3,9 @@
     ./swaylock.nix
     ./rofi.nix
     ./foot.nix
-    ./mako.nix
     ./fcitx.nix
+    ./hyprpanel.nix
     ./zsh
     ./nixvim
-    ./waybar
   ];
 }

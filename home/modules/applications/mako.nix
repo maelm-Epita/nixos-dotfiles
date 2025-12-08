@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-    services.mako = {
-        enable = true;
-        settings = {
-        };
-    };
+    #    services.mako = {
+    #    enable = true;
+    #    settings = {
+    #    };
+    #};
 }
