@@ -6,8 +6,8 @@
 let 
     sddm-theme = let
         background = pkgs.fetchurl {
-            url = "https://w.wallhaven.cc/full/5g/wallhaven-5gel59.jpg";
-            hash = "sha256-7zGpGvh4E7QyuJxVlnUBClhrK2U+hNQrrfADWl45BAw=";
+            url = "https://raw.githubusercontent.com/maelm-Epita/nixos-dotfiles/refs/heads/master/other/plains.jpg";
+            hash = "sha256-We8DKwu0fHm0fbQNfaA4RVCE7y3R06hNFNu/mxpAseg=";
         };
     in silentSDDM.packages.${pkgs.system}.default.override {
             theme = "default";
