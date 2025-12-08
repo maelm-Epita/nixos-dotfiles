@@ -55,7 +55,7 @@
                     ];
                 };
             };
-            bar.clock.format = "%H:%M:%p";
+            bar.clock.format = "%H:%M %p";
             bar.clock.showTime = true;
             menus.media.displayTime = false;
             theme.osd.enable = true;

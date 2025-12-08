@@ -6,8 +6,8 @@
 let 
     sddm-theme = let
         background = pkgs.fetchurl {
-            url = "https://raw.githubusercontent.com/maelm-Epita/nixos-dotfiles/refs/heads/master/other/plains.jpg";
-            hash = "sha256-We8DKwu0fHm0fbQNfaA4RVCE7y3R06hNFNu/mxpAseg=";
+            url = "https://raw.githubusercontent.com/maelm-Epita/nixos-dotfiles/refs/heads/master/other/plains.png";
+            hash = "sha256-IoHzg4uFDbbO/4VW75W0Cb+chDntlN+utEA3sT9p/is=";
         };
     in silentSDDM.packages.${pkgs.system}.default.override {
             theme = "default";
