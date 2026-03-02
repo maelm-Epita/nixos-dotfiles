@@ -11,6 +11,7 @@ in
         brightnessctl
         hyprpaper
         hyprpanel
+        hyprlock
     ];
     i18n.inputMethod = {
         type = "fcitx5";
@@ -33,7 +34,8 @@ in
         LAUNCHER = "rofi -show drun -location 2 --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto";
         FILEMANAGER = "thunar";
         SCREENSHOT = "hyprshot -m region --clipboard-only";
-        LOCK = "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --show-failed-attempts --indicator-idle-visible";
+        #LOCK = "swaylock --screenshots --ignore-empty-password --daemonize --indicator-caps-lock --indicator --clock --show-failed-attempts --indicator-idle-visible";
+        LOCK = "hyprlock";
         POWERPROFILE = "${builtins.toString ./.}/scripts/power-profile-switch.sh";
     };
 

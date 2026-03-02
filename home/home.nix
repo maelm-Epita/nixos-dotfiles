@@ -29,11 +29,11 @@
         firefox
         vesktop
         anki
-        # -- RICING -- #
-        fastfetch
         # -- FONTS -- #
         cascadia-code
         noto-fonts-cjk-sans
+        # -- GAMES -- #
+        prismlauncher
     ];
 
     fonts.fontconfig.enable = true;

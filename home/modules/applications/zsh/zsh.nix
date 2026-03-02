@@ -33,7 +33,7 @@ in
             ccdb="gcc -fsanitize=address -g -std=c99 -pedantic -Werror -Wall -Wextra -Wvla";
             home-rb="home-manager switch --flake ${session.FLAKEDIR}";
             nixos-rb="sudo nixos-rebuild switch --flake ${session.FLAKEDIR}";
-            dev="nix develop -c zsh";
+            dev="NIXPKGS_ALLOW_UNFREE=1 nix develop --impure -c zsh";
         };
     };
 }

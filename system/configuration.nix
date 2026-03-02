@@ -43,6 +43,13 @@ in
     # -- NETWORKING -- #
     networking.hostName = "elitebook";
     networking.networkmanager.enable = true;
+    # -- ZEROTIER -- #
+    services.zerotierone = {
+        enable = true;
+        joinNetworks = [
+            "a581878f7d4e60a9"
+        ];
+    };
 
     # -- AUDIO -- #
     security.rtkit.enable = true;
