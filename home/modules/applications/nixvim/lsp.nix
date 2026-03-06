@@ -12,6 +12,7 @@
             nixd.enable = true;
             asm-lsp.enable = true; # does not work 
             jdtls.enable = true;
+            ts_ls.enable = true;
         };
     };
 }
