@@ -37,5 +37,6 @@
     ];
 
     fonts.fontconfig.enable = true;
+    services.udiskie.enable = true;
     programs.home-manager.enable = true;
 }

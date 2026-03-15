@@ -178,6 +178,9 @@ in
     };
     services.logind.settings.Login.HandlePowerKey = "ignore";
 
+    # -- USB AUTOMOUNT -- #
+    services.udisks2.enable = true;
+
     # -- MAN PAGES -- #
     documentation.enable = true;
 
